@@ -7,9 +7,6 @@ export const HeroPage = () => {
   const { heroId } = useParams();
   const hero = useMemo(() => getHeroById(heroId), [heroId]);
   const onReturn = () => {
-    if (window.history.length <= 2) {
-      return <Navigate to={"/"} />;
-    }
     window.history.back();
   };
   if (!hero) return <Navigate to={"/"} />;
