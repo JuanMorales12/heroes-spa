@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { getHeroById } from "../helpers";
+import { basePath } from "../../../config";
 
 export const HeroPage = () => {
   const { heroId } = useParams();
@@ -16,7 +17,7 @@ export const HeroPage = () => {
     <div className="row mt-5">
       <div className="col-4">
         <img
-          src={`/heroes/${heroId}.jpg`}
+          src={`${basePath}/heroes/${heroId}.jpg`}
           alt={hero.superhero}
           className="img-thumbnail animate__animated animate__fadeInLeft"
         />
