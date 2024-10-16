@@ -4,6 +4,7 @@ import { LoginPage } from "../auth";
 import { HeroesRoutes } from "../heroes";
 import { PrivateRouter } from "./PrivateRouter";
 import { PublicRouter } from "./PublicRouter";
+import { basePath } from "../../config";
 
 export const AppRouter = () => {
   return (
@@ -11,7 +12,7 @@ export const AppRouter = () => {
       <div className="container">
         <Routes>
           <Route
-            path="login/*"
+            path={`${basePath}/login/*`}
             element={
               <PublicRouter>
                 <LoginPage />
@@ -19,7 +20,7 @@ export const AppRouter = () => {
             }
           />
           <Route
-            path="/*"
+            path= {`${basePath}/*`}
             element={
               <PrivateRouter>
                 <HeroesRoutes />
