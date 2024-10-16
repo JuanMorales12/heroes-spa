@@ -10,7 +10,7 @@ export const HeroCard = ({
   first_appearance,
   characters,
 }) => {
-  const heroImg = `/heroes/${id}.jpg`;
+  const heroImg = `${basePath}/heroes/${id}.jpg`;
   const caractersByHero = characters?.split(",").filter((ch) => ch.trim() !== alter_ego.trim());
   
   return (
